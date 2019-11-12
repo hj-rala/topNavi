@@ -7,7 +7,7 @@ var scrollDiv = function() {
 	var $tmp = $(window).scrollTop();
 	var $el = $('header');
 	var $target = $el.height()-50;
-	if (winWidth > 1000){	
+	if (winWidth > 929){	
 		$el.removeClass('moveM');
 		if ($tmp > $target){
 			$el.addClass('moveW');
@@ -27,7 +27,7 @@ var scrollDiv = function() {
 			//$('#logo a img').attr('src','../images/img/img_logo_active.png');
 		} else {
 			$el.removeClass('moveM').removeAttr('style','');
-			$('#logo a img').attr('src','../images/img/img_logo.png');
+			$('#logo a img').attr('src','../images/img/img_logo_re_forest.png');
 		}
 	}
 }
@@ -93,7 +93,7 @@ var logoChange = function(){
 
 var logoNormal = function(){
 	var target = $('#logo');
-	target.find('img').attr('src','../images/img/img_logo.png');
+	target.find('img').attr('src','../images/img/img_logo_re_forest.png');
 	$('.util01').attr('src','../images/img/img_util_sfd.png');
 	$('.util02').attr('src','../images/img/img_util_smart.png');
 }
@@ -127,9 +127,9 @@ var menuBlock = function (){
 		targetDiv.addClass('hover');
 	}
 		
-	$('#navibg').stop().animate({'top':'0','height':'474px'},200);		
+	$('#navibg').stop().animate({'top':'0','height':'427px'},200);		
 	$('ul[id^=topSubm]').css('display','block');
-	$('ul[id^=topSubm]').stop().animate({'height':'284px'},300);
+	$('ul[id^=topSubm]').stop().animate({'height':'230px'},300);
 	logoChange();
 }
 
@@ -178,7 +178,7 @@ var menuEvent = function () {
 var menuWchk = function(){
 	var winWidth = Math.max($(window).width(), window.innerWidth);
 
-	if(winWidth > 1000){
+	if(winWidth > 929){
 		$('#topMenu').addClass('on'); 
 	} else {
 		$('#topMenu').removeClass('on');
@@ -234,7 +234,7 @@ $('#mNavi').bind('click',function(){
 		$('#navi').stop().animate({'right':'0'},300);
 		$('#topMenu').css('height',winHeight-$('#navi').css('padding-top').replace(/[^0-9]/g, ""));
 		$('#mBg').css('display','block');
-		$(this).css({'right':'20px'});
+		$(this).css({'right':'15px'});
 		setTimeout( function(){ $('#mNavi').addClass('active');	}, 300);
 		$('html').css('overflow-y','hidden');
 		$('#logo').css('z-index','70');		
@@ -257,7 +257,7 @@ $('#mNavi').bind('click',function(){
 var linkLimits = function (){ 
 	$('a[id^=topNavi]').click(function(event){
 		var winWidth =  $(window).width();
-		if (winWidth < 1000){ 
+		if (winWidth < 929){ 
 			event.preventDefault ? event.preventDefault() : event.returnValue = false;
 		}
 	});
